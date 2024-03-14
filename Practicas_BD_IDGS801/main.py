@@ -97,7 +97,6 @@ def procesar_compra():
     db.session.commit()
 
     id_cliente = cliente.idCliente
-    print(id_cliente)
 
     for pedido in pedidos:
         detalle_compra = DetalleCompra(tamanio=pedido['tamaño'],
@@ -130,6 +129,7 @@ def get_mes():
 
     # Convertir resultados a una lista de diccionarios
     resultados_dict = [{'nombre': row.nombre, 'total': row.total} for row in resultados]
+    print(resultados_dict[0])
 
     return jsonify(resultados_dict)
 
